@@ -106,6 +106,10 @@ main {
   padding: 0 15px;
 }
 
+.section-common {
+    padding-top: 130px;
+}
+
 h6,
 h5,
 h4,
@@ -118,10 +122,11 @@ h1,
 .h3,
 .h2,
 .h1 {
-  margin: 0;
+  margin: 0 0 25px 0;
   font-family: var(--font-heading);
   display: inline-block;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* Заголовок в HERO */
@@ -130,13 +135,7 @@ h1,
   font-size: clamp(32px, 2.604vw, 50px);
 } */
 
-/* Заголовки всех секций */
-/* h2,
-.h2 {
-  font-size: clamp(24px, 2.083vw, 40px);
-  margin-bottom: clamp(30px, 3.646vw, 70px);
-  text-transform: uppercase;
-} */
+
 
 /* Заголовки блогов, подзаголовок формы */
 /* h3,
@@ -251,6 +250,15 @@ button {
     align-items: center;
 }
 
+.block__wrapper {
+    width: 75%;
+    margin: auto auto;
+    padding: 0 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .hero__buttons {
     display: flex;
     width: 100%;
@@ -339,8 +347,82 @@ button {
     font-display: swap;
 }
 
+.block__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.block-content {
+    padding: 3% 0;
+    margin-bottom: 25px;
+}
+
+.img__wrapper {
+    width: 50%;
+    padding: 0 15px;
+}
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+.decoration-inner {
+    margin-top: 130px;
+}
+
+.decoration-double {
+    margin-top: 130px;
+    display: flex;
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.flats__wrapper {
+    display: flex;
+    padding: 25px;
+}
+
+.flat__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 5% 0;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.footer-left {
+    width: 65%;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    padding-top: 130px;
+}
+
+.contacts__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts__image {
+    width: 50%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
 }
