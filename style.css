@@ -401,11 +401,10 @@ img {
 }
 
 .footer__wrapper {
-    display: flex;
-    /* gap: 20px; */
-    padding: 5% 0;
-    justify-content: space-between;
-    align-items: stretch;
+  display: flex;
+  padding: 5% 0;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .footer-left {
@@ -561,10 +560,10 @@ img {
   }
   h1 {
     font-size: clamp(24px, 5.42vw, 65px);
-    line-height: auto;
+    line-height: 1;
   }
   h2 {
-    font-size: clamp(20px, 4.17vw, 50px);
+    font-size: clamp(18px, 4.17vw, 50px);
     line-height: 1.1;
   }
   .contacts__address p {
@@ -594,7 +593,15 @@ img {
   .section-common {
     padding-top: 75px;
   }
+  .decoration-inner,
+  .decoration-double {
+    margin-top: 75px;
+  }
+  .hero__wrapper {
+    width: 80%;
+  }
   .contacts {
+    padding-top: 75px;
     flex-direction: column;
     gap: 50px;
   }
@@ -602,16 +609,43 @@ img {
   .contacts__image {
     width: 100%;
   }
+  .block__wrapper {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
+  h4 {
+    font-size: 16px;
+    line-height: 23px;
+  }
   .section-common {
     padding-top: 50px;
+  }
+  .block__wrapper button {
+    align-self: center;
+  }
+  .header {
+    justify-content: center;
+  }
+  .header__btn {
+    display: none;
+  }
+  .hero__wrapper {
+    width: 90%;
+  }
+  .hero__buttons {
+    flex-direction: column;
+    gap: 10px;
   }
   .flats__wrapper {
     display: grid;
     padding: 15px;
     grid-template-columns: 1fr;
+  }
+  .decoration-inner,
+  .decoration-double {
+    margin-top: 50px;
   }
   .decoration-double {
     display: flex;
@@ -620,5 +654,60 @@ img {
   }
   .img__wrapper {
     width: 100%;
+  }
+  .contacts {
+    padding-top: 50px;
+  }
+  .contact-form {
+    width: 100%;
+    padding: 30px;
+  }
+  .contacts__title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .contacts__address p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .footer__wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+  }
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    padding: 0 15px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-left p {
+    margin: 0;
+    text-align: center;
+  }
+  .footer-left img {
+    margin-bottom: 10px;
+  }
+  .pulse-btn {
+    bottom: 20px;
+    right: 30px;
+  }
+  .pulse-circle {
+    width: 70px;
+    height: 70px;
+  }
+  .pulse-wave {
+    width: 80px;
+    height: 80px;
+  }
+  .modal__content {
+    width: 90%;
+    padding: 30px;
+  }
+  .modal__title {
+    font-size: 16px;
+    line-height: 23px;
   }
 }
