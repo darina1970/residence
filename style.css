@@ -7,7 +7,22 @@
       format("truetype"),
     url("./assets/fonts/GrandisExtended-Light/GrandisExtended-Light.eot")
       format("embedded-opentype");
-  font-weight: 300;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'StereoGothic900-Regular2';
+    src: url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.woff2")
+      format("woff2"),
+    url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.woff") format("woff"),
+    url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.ttf")
+      format("truetype"),
+    url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.eot")
+      format("embedded-opentype");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -15,28 +30,14 @@
 :root {
   /* Шрифты */
   --font-base: "Grandis Extended", sans-serif;
-
-
-  /* Веса шрифтов */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
+  --font-heading: "StereoGothic900-Regular2", sans-serif;
 
   /* Цвета */
   --color-bg: #F2F1EE;
   --color-btn: #3a453c;
-  --color-header-footer-bg: #191a18;
-  --color-menu-text: #f4f2e9;
   --color-text: #000;
   --color-white: #ffffff;
-  --color-card: #f3f1e8;
-  --color-orange: #d75300;
-  --color-orange-light: rgba(215, 83, 0, 0.6);
-  --color-form-input: rgba(25, 26, 24, 0.3);
-  --color-gray: #555555;
-
-  /* Адаптивная высота обрезанного края блоков */
-  --tear-height: clamp(90px, 6.25vw, 120px);
+  --color-heading: #3a453c;
 }
 
 input,
@@ -45,7 +46,8 @@ select {
   outline: none;
   border: none;
   box-shadow: none;
-  /* font-size: 16px; */
+  font-family: var(--font-base);
+  font-size: 16px;
 }
 
 select,
@@ -73,16 +75,9 @@ body {
   margin: 0;
   background-color: var(--color-bg);
   font-family: var(--font-base);
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 23px;
   color: var(--color-text);
-  line-height: 24px;
-  /* color: var(--color-text);
-  font-size: clamp(16px, 1.042vw, 20px);
-  font-weight: 400;
-  background-color: var(--color-bg);
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition: transform 0.2s ease; */
 }
 
 body.hidden {
@@ -92,8 +87,6 @@ body.hidden {
 header,
 footer {
   flex: 0 0 auto;
-  /* background-color: var(--color-header-footer-bg);
-  color: var(--color-menu-text); */
 }
 
 main {
@@ -123,40 +116,25 @@ h1,
 .h2,
 .h1 {
   margin: 0 0 25px 0;
-  font-family: var(--font-heading);
   display: inline-block;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: 500;
   text-transform: uppercase;
+  color: var(--color-heading);
 }
 
-/* Заголовок в HERO */
-/* h1,
-.h1 {
-  font-size: clamp(32px, 2.604vw, 50px);
-} */
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+}
 
-
-
-/* Заголовки блогов, подзаголовок формы */
-/* h3,
-.h3 {
-  font-size: clamp(20px, 1.67vw, 32px);
-} */
-
-/* Заголовки карточек */
-/* h4,
-.h4 {
-  font-size: clamp(18px, 1.042vw, 20px);
-} */
-
-/* Можно добавить заголовку, чтобы центрировать */
-.text-align {
-  width: 100%;
-  text-align: center;
+h3 {
+  font-size: 23px;
+  line-height: 30px;
 }
 
 p {
-  margin: 0;
+  margin: 0 0 25px;
 }
 
 ul,
@@ -169,25 +147,40 @@ ol {
 a {
   text-decoration: none;
   color: inherit;
+
 }
 
 button {
   cursor: pointer;
 }
 
-.btn {
-    padding: 12px 38px;
-    border-radius: 50px;
-    background-color: transparent;
-    color: var(--color-btn);
-    text-transform: uppercase;
-    font-family: var(--font-base);
-    transition: all 0.3s ease-in-out;
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.btn:hover {
-    background-color: var(--color-btn);
-    color: var(--color-white);
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn {
+  padding: 12px 38px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-family: var(--font-base);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  color: var(--color-btn);
+}
+
+.btn-transparent:hover {
+  background-color: var(--color-btn);
+  color: var(--color-white);
 }
 
 .btn-green {
@@ -210,6 +203,7 @@ button {
     padding: 0 50px;
     background-color: var(--color-bg);
     transition: box-shadow 0.3s ease;
+    z-index: 90;
 }
 
 .header.scrolled {
@@ -222,6 +216,10 @@ button {
     justify-content: space-between;
 }
 
+.header__menu .menu__item{
+  cursor: pointer;
+}
+
 .menu__item {
     padding: 30px 15px;
     text-transform: uppercase;
@@ -229,22 +227,23 @@ button {
 
 .hero {
     height: 100vh;
-    position: relative;
+    padding-top: var(--header-height);
+    /* position: relative; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.hero::before {
+/* .hero::before {
     content: '';
     display: block;
     height: var(--header-height);
-}
+} */
 
 .hero__wrapper {
     width: 60%;
     margin: auto auto;
-    padding: 5%;
+    padding-bottom: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,7 +263,7 @@ button {
     width: 100%;
     flex-direction: row;
     justify-content: center;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .hero__button-about,
@@ -338,14 +337,6 @@ button {
 }
 
 
-@font-face {
-    font-family: 'StereoGothic900-Regular2';
-    src: url('../fonts/StereoGothic900-Regular2.eot');
-    src: url('../fonts/StereoGothic900-Regular2.eot?#iefix') format('embedded-opentype'), url('../fonts/StereoGothic900-Regular2.woff2') format('woff2'), url('../fonts/StereoGothic900-Regular2.woff') format('woff'), url('../fonts/StereoGothic900-Regular2.ttf') format('truetype'), url('../fonts/StereoGothic900-Regular2.svg#StereoGothic900-Regular2') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
 
 .block__wrapper {
     display: flex;
@@ -405,6 +396,13 @@ img {
     width: 65%;
 }
 
+.footer__title {
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 23px;
+  color: #000;
+}
+
 .contacts {
     display: flex;
     align-items: center;
@@ -423,6 +421,38 @@ img {
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input {
+  -webkit-appearance: none;
+  background: transparent;
+  border-bottom: 1px solid #7777;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.contact-form button {
+  width: fit-content;
+  align-self: center;
+  margin-top: 30px;
+}
+
+.contacts__address{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 25px;
+
+}
+
+.contacts__address p {
+  text-transform: uppercase;
+  font-size: 38px;
+  line-height: 40px;
+  color: var(--color-heading);
+  margin: 0;
 }
