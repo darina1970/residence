@@ -133,6 +133,11 @@ h3 {
   line-height: 30px;
 }
 
+h4 {
+  font-size: 18px;
+  line-height: 26px;
+}
+
 p {
   margin: 0 0 25px;
 }
@@ -228,17 +233,10 @@ button {
 .hero {
     height: 100vh;
     padding-top: var(--header-height);
-    /* position: relative; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-/* .hero::before {
-    content: '';
-    display: block;
-    height: var(--header-height);
-} */
 
 .hero__wrapper {
     width: 60%;
@@ -256,6 +254,10 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.block__top-img {
+  margin-bottom: 5%;
 }
 
 .hero__buttons {
@@ -284,7 +286,7 @@ button {
   justify-content: center;
 }
 
-/* Сам телефон */
+
 .pulse-icon {
   position: relative;
   z-index: 3;
@@ -292,7 +294,6 @@ button {
   height: 40px;
 }
 
-/* Основной круг вокруг телефона */
 .pulse-circle {
     position: absolute;
     width: 80px;
@@ -303,7 +304,6 @@ button {
     animation: circlePulse 1.5s infinite;
 }
 
-/* Волны, исходящие от круга */
 .pulse-wave {
     position: absolute;
     width: 90px;
@@ -314,13 +314,11 @@ button {
     animation: wavePulse 1.5s infinite;
 }
 
-/* Анимация основного круга (немного увеличиваем) */
 @keyframes circlePulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
 
-/* Анимация исходящей волны */
 @keyframes wavePulse {
     0% {
         transform: scale(1);
@@ -335,8 +333,6 @@ button {
         opacity: 0;
     }
 }
-
-
 
 .block__wrapper {
     display: flex;
@@ -384,6 +380,11 @@ img {
     align-items: center;
 }
 
+.footer {
+  font-size: 12px;
+  line-height: 20px;
+}
+
 .footer__wrapper {
     display: flex;
     gap: 20px;
@@ -393,7 +394,11 @@ img {
 }
 
 .footer-left {
-    width: 65%;
+  width: 65%;
+}
+
+.footer-right p {
+  margin: 0;
 }
 
 .footer__title {
@@ -401,6 +406,7 @@ img {
   font-size: 16px;
   line-height: 23px;
   color: #000;
+  margin-bottom: 10px;
 }
 
 .contacts {
@@ -426,6 +432,7 @@ img {
   flex-direction: column;
 }
 
+.modal__form input,
 .contact-form input {
   -webkit-appearance: none;
   background: transparent;
@@ -456,3 +463,74 @@ img {
   color: var(--color-heading);
   margin: 0;
 }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal__content {
+  position: relative;
+  z-index: 2;
+  background: var(--color-bg);
+  padding: 50px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 36px;
+  cursor: pointer;
+  color: #333;
+  width: 44px;
+  height: 44px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.flat__title,
+.modal__title {
+  text-align: center;
+}
+
+.modal__form button {
+  margin-top: 30px;
+  width: fit-content;
+  align-self: center;
+}
+
