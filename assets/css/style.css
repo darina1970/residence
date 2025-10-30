@@ -478,10 +478,21 @@ img {
   margin-bottom: 20px;
 }
 
-.contact-form button {
+.contact-form .form-button {
   width: fit-content;
   align-self: center;
   margin-top: 30px;
+}
+
+.contact-form .form-button input {
+  padding: 12px 38px;
+  border: 1px solid var(--color-btn);
+  cursor: pointer;
+  background-color: var(--color-btn);
+}
+
+.contact-form .form-button input:hover {
+  background-color: var(--color-white);
 }
 
 
