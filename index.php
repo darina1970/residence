@@ -61,77 +61,149 @@ get_header();
             $dec_img_url = is_array($about_decoration_inner) ? $about_decoration_inner['url'] : $about_decoration_inner;
         ?>
             <div class="decoration-inner">
-                <img src="<?php echo esc_url($dec_img_url); ?>" alt="">
+                <img src="<?php echo esc_url($dec_img_url); ?>" alt="Фото ЖК">
             </div>
         <?php endif; ?>
     </section>
     <section class="section-common fade-in" id="location">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
-                <h2>Расположение</h2>
-                <div class="block-content">
-                    <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
-                    <p>Архитектура комплекса от известного голландского бюро UNStudio сочетает современный стиль и элегантные элементы неоклассики, подчеркивая связь с историческим окружением. Высокие фасады из стекла и алюминия и уютный двор с зелеными зонами, спортивными площадками и беговыми дорожками создают идеальные условия для активного отдыха и спокойных прогулок.</p>
-                    <p>Для семейного комфорта в проекте предусмотрены просторные квартиры от двух до четырех спален, стильные лобби, детский сад, рестораны и магазины. Жилой комплекс «Новые Академики» предлагает все для комфортной и насыщенной жизни в Москве.</p>
-                </div>
+                <?php
+                $section_top_image = get_field('section2_top_image');
+                if ($section_top_image):
+                    $top_img_url = is_array($section_top_image) ? $section_top_image['url'] : $section_top_image;
+                ?>
+                    <img class="block__top-img" src="<?php echo esc_url($top_img_url); ?>" alt="Декоративный элемент">
+                <?php endif; ?>
+
+                <?php if ($title = get_field('section2_title')): ?>
+                    <h1><?php echo esc_html($title); ?></h1>
+                <?php endif; ?>
+
+                <?php if ($content = get_field('section2_content')): ?>
+                    <div class="block-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
+
                 <button class="btn btn-green open-modal">Оставить заявку</button>
             </div>
         </div>
-        <div class="decoration-inner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
-        </div>
+
+        <?php
+        $section_decoration_inner = get_field('section2_decoration_inner');
+        if ($section_decoration_inner):
+            $dec_img_url = is_array($section_decoration_inner) ? $section_decoration_inner['url'] : $section_decoration_inner;
+        ?>
+            <div class="decoration-inner">
+                <img src="<?php echo esc_url($dec_img_url); ?>" alt="Фото ЖК">
+            </div>
+        <?php endif; ?>
     </section>
     <section class="section-common fade-in">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
-                <h2>Архитектура</h2>
-                <div class="block-content">
-                    <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
-                    <p>Архитектура комплекса от известного голландского бюро UNStudio сочетает современный стиль и элегантные элементы неоклассики, подчеркивая связь с историческим окружением. Высокие фасады из стекла и алюминия и уютный двор с зелеными зонами, спортивными площадками и беговыми дорожками создают идеальные условия для активного отдыха и спокойных прогулок.</p>
-                    <p>Для семейного комфорта в проекте предусмотрены просторные квартиры от двух до четырех спален, стильные лобби, детский сад, рестораны и магазины. Жилой комплекс «Новые Академики» предлагает все для комфортной и насыщенной жизни в Москве.</p>
-                </div>
+                <?php
+                $section_top_image = get_field('section3_top_image');
+                if ($section_top_image):
+                    $top_img_url = is_array($section_top_image) ? $section_top_image['url'] : $section_top_image;
+                ?>
+                    <img class="block__top-img" src="<?php echo esc_url($top_img_url); ?>" alt="Декоративный элемент">
+                <?php endif; ?>
+
+                <?php if ($title = get_field('section3_title')): ?>
+                    <h1><?php echo esc_html($title); ?></h1>
+                <?php endif; ?>
+
+                <?php if ($content = get_field('section3_content')): ?>
+                    <div class="block-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
+
                 <button class="btn btn-green open-modal">Оставить заявку</button>
             </div>
         </div>
-        <div class="decoration-inner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
-        </div>
+
+        <?php
+        $section_decoration_inner = get_field('section3_decoration_inner');
+        if ($section_decoration_inner):
+            $dec_img_url = is_array($section_decoration_inner) ? $section_decoration_inner['url'] : $section_decoration_inner;
+        ?>
+            <div class="decoration-inner">
+                <img src="<?php echo esc_url($dec_img_url); ?>" alt="Фото ЖК">
+            </div>
+        <?php endif; ?>
     </section>
     <section class="section-common fade-in">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
-                <h2>Двор</h2>
-                <div class="block-content">
-                    <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
-                    <p>Архитектура комплекса от известного голландского бюро UNStudio сочетает современный стиль и элегантные элементы неоклассики, подчеркивая связь с историческим окружением. Высокие фасады из стекла и алюминия и уютный двор с зелеными зонами, спортивными площадками и беговыми дорожками создают идеальные условия для активного отдыха и спокойных прогулок.</p>
-                    <p>Для семейного комфорта в проекте предусмотрены просторные квартиры от двух до четырех спален, стильные лобби, детский сад, рестораны и магазины. Жилой комплекс «Новые Академики» предлагает все для комфортной и насыщенной жизни в Москве.</p>
-                </div>
+                <?php
+                $section_top_image = get_field('section4_top_image');
+                if ($section_top_image):
+                    $top_img_url = is_array($section_top_image) ? $section_top_image['url'] : $section_top_image;
+                ?>
+                    <img class="block__top-img" src="<?php echo esc_url($top_img_url); ?>" alt="Декоративный элемент">
+                <?php endif; ?>
+
+                <?php if ($title = get_field('section4_title')): ?>
+                    <h1><?php echo esc_html($title); ?></h1>
+                <?php endif; ?>
+
+                <?php if ($content = get_field('section4_content')): ?>
+                    <div class="block-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
+
                 <button class="btn btn-green open-modal">Оставить заявку</button>
             </div>
         </div>
-        <div class="decoration-inner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
-        </div>
+
+        <?php
+        $section_decoration_inner = get_field('section4_decoration_inner');
+        if ($section_decoration_inner):
+            $dec_img_url = is_array($section_decoration_inner) ? $section_decoration_inner['url'] : $section_decoration_inner;
+        ?>
+            <div class="decoration-inner">
+                <img src="<?php echo esc_url($dec_img_url); ?>" alt="Фото ЖК">
+            </div>
+        <?php endif; ?>
     </section>
     <section class="section-common fade-in">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
-                <h2>Лобби</h2>
-                <div class="block-content">
-                    <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
-                    <p>Архитектура комплекса от известного голландского бюро UNStudio сочетает современный стиль и элегантные элементы неоклассики, подчеркивая связь с историческим окружением. Высокие фасады из стекла и алюминия и уютный двор с зелеными зонами, спортивными площадками и беговыми дорожками создают идеальные условия для активного отдыха и спокойных прогулок.</p>
-                    <p>Для семейного комфорта в проекте предусмотрены просторные квартиры от двух до четырех спален, стильные лобби, детский сад, рестораны и магазины. Жилой комплекс «Новые Академики» предлагает все для комфортной и насыщенной жизни в Москве.</p>
-                </div>
+                <?php
+                $section_top_image = get_field('section5_top_image');
+                if ($section_top_image):
+                    $top_img_url = is_array($section_top_image) ? $section_top_image['url'] : $section_top_image;
+                ?>
+                    <img class="block__top-img" src="<?php echo esc_url($top_img_url); ?>" alt="Декоративный элемент">
+                <?php endif; ?>
+
+                <?php if ($title = get_field('section5_title')): ?>
+                    <h1><?php echo esc_html($title); ?></h1>
+                <?php endif; ?>
+
+                <?php if ($content = get_field('section5_content')): ?>
+                    <div class="block-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
+
                 <button class="btn btn-green open-modal">Оставить заявку</button>
             </div>
         </div>
-        <div class="decoration-inner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
-        </div>
+
+        <?php
+        $section_decoration_inner = get_field('section5_decoration_inner');
+        if ($section_decoration_inner):
+            $dec_img_url = is_array($section_decoration_inner) ? $section_decoration_inner['url'] : $section_decoration_inner;
+        ?>
+            <div class="decoration-inner">
+                <img src="<?php echo esc_url($dec_img_url); ?>" alt="Фото ЖК">
+            </div>
+        <?php endif; ?>
     </section>
     <section class="section-common fade-in">
         <div class="container">
