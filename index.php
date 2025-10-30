@@ -205,73 +205,113 @@ get_header();
             </div>
         <?php endif; ?>
     </section>
-    <section class="section-common fade-in">
+    <section class="section-common fade-in" id="double-block">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
-                <h2>Сервисы</h2>
-                <div class="block-content">
-                    <p>Жилой комплекс «Новые Академики» расположен на улице Кржижановского, в историческом районе Академический на юго-западе Москвы. Этот район известен богатым академическим прошлым, ведь с середины XX века здесь селились сотрудники научных институтов, профессора и московская интеллигенция. Тихие, зеленые дворы и улицы создают атмосферу уюта и спокойствия, идеальную для жизни и воспитания детей.</p>
-                    <p>«Новые Академики» располагаются всего в 20 минутах ходьбы от метро «Профсоюзная», а также имеют удобный доступ к крупным магистралям. До ТТК можно доехать за 10 минут, до Садового кольца и «Москва-Сити» — за 25 минут. Любителям общественного транспорта подойдёт автобус М90, который за 50 минут довезет до центра Москвы, мимо Кремля.</p>
-                    <p>Жители комплекса смогут наслаждаться прогулками вблизи Новочеремушкинского пруда, а также в парках «Долина реки Котловки» и «Сосенки», которые расположены всего в 20 минутах пешком. Вблизи комплекса также находятся спортивный кластер «Кант» и камерный кинотеатр «Салют». Район располагает тремя школами, входящими в топ‑50 лучших школ Москвы, что делает его идеальным для семей.</p>
-                </div>
+                <?php
+                $top_image = get_field('double_top_image');
+                if ($top_image):
+                    $top_img_url = is_array($top_image) ? $top_image['url'] : $top_image;
+                ?>
+                    <img class="block__top-img" src="<?php echo esc_url($top_img_url); ?>" alt="Декоративный элемент">
+                <?php endif; ?>
+
+                <?php if ($title = get_field('double_title')): ?>
+                    <h2><?php echo esc_html($title); ?></h2>
+                <?php endif; ?>
+
+                <?php if ($content = get_field('double_content')): ?>
+                    <div class="block-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
+
                 <button class="btn btn-green open-modal">Оставить заявку</button>
             </div>
         </div>
-        <div class="decoration-double container">
-            <div class="img__wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/flats-1.jpg" alt="">
+
+        <?php
+        $dec_1 = get_field('double_decoration_1');
+        $dec_2 = get_field('double_decoration_2');
+        if ($dec_1 || $dec_2):
+        ?>
+            <div class="decoration-double container">
+                <?php if ($dec_1):
+                    $dec1_url = is_array($dec_1) ? $dec_1['url'] : $dec_1;
+                ?>
+                    <div class="img__wrapper">
+                        <img src="<?php echo esc_url($dec1_url); ?>" alt="Декоративный элемент 1">
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($dec_2):
+                    $dec2_url = is_array($dec_2) ? $dec_2['url'] : $dec_2;
+                ?>
+                    <div class="img__wrapper">
+                        <img src="<?php echo esc_url($dec2_url); ?>" alt="Декоративный элемент 2">
+                    </div>
+                <?php endif; ?>
             </div>
-            <div class="img__wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/flats-2.jpg" alt="">
-            </div>
-        </div>
+        <?php endif; ?>
     </section>
     <section class="section-common fade-in" id="appartments">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
-                <h2>Квартиры</h2>
-                <div class="block-content">
-                    <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
-                    <p>Архитектура комплекса от известного голландского бюро UNStudio сочетает современный стиль и элегантные элементы неоклассики, подчеркивая связь с историческим окружением. Высокие фасады из стекла и алюминия и уютный двор с зелеными зонами, спортивными площадками и беговыми дорожками создают идеальные условия для активного отдыха и спокойных прогулок.</p>
-                    <p>Для семейного комфорта в проекте предусмотрены просторные квартиры от двух до четырех спален, стильные лобби, детский сад, рестораны и магазины. Жилой комплекс «Новые Академики» предлагает все для комфортной и насыщенной жизни в Москве.</p>
-                </div>
+                <?php
+                $top_image = get_field('appartments_top_image');
+                if ($top_image):
+                    $top_img_url = is_array($top_image) ? $top_image['url'] : $top_image;
+                ?>
+                    <img class="block__top-img" src="<?php echo esc_url($top_img_url); ?>" alt="Декоративный элемент">
+                <?php endif; ?>
+
+                <?php if ($title = get_field('appartments_title')): ?>
+                    <h2><?php echo esc_html($title); ?></h2>
+                <?php endif; ?>
+
+                <?php if ($content = get_field('appartments_content')): ?>
+                    <div class="block-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
+
         <div class="flats__wrapper container-fluid">
-            <div class="flat__wrapper">
-                <div class="flat-img__wrapper">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
+            <?php
+            for ($i = 1; $i <= 4; $i++):
+                $flat_img   = get_field("flat_{$i}_image");
+                $flat_title = get_field("flat_{$i}_title");
+
+                if ( !$flat_img && !$flat_title ) continue;
+
+                $flat_img_url = is_array($flat_img) ? $flat_img['url'] : $flat_img;
+            ?>
+                <div class="flat__wrapper">
+                    <?php if ($flat_img): ?>
+                        <div class="flat-img__wrapper">
+                            <img src="<?php echo esc_url($flat_img_url); ?>" alt="<?php echo esc_attr($flat_title ?: 'Квартира'); ?>">
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($flat_title): ?>
+                        <h4 class="flat__title"><?php echo esc_html($flat_title); ?></h4>
+                    <?php endif; ?>
+
+                    <button class="btn btn-green open-modal">Узнать цены</button>
                 </div>
-                <h4 class="flat__title">1 спальня</h4>
-                <button class="btn btn-green open-modal">Узнать цены</button>
-            </div>
-            <div class="flat__wrapper">
-                <div class="flat-img__wrapper">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
-                </div>
-                <h4 class="flat__title">2 спальни</h4>
-                <button class="btn btn-green open-modal">Узнать цены</button>
-            </div>
-            <div class="flat__wrapper">
-                <div class="flat-img__wrapper">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
-                </div>
-                <h4 class="flat__title">3 спальни</h4>
-                <button class="btn btn-green open-modal">Узнать цены</button>
-            </div>
-            <div class="flat__wrapper">
-                <div class="flat-img__wrapper">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
-                </div>
-                <h4 class="flat__title">4 спальни</h4>
-                <button class="btn btn-green open-modal">Узнать цены</button>
-            </div>
+            <?php endfor; ?>
         </div>
-        <div class="decoration-inner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
-        </div>
+
+        <?php
+        $decoration = get_field('appartments_decoration');
+        if ($decoration):
+            $dec_img_url = is_array($decoration) ? $decoration['url'] : $decoration;
+        ?>
+            <div class="decoration-inner">
+                <img src="<?php echo esc_url($dec_img_url); ?>" alt="">
+            </div>
+        <?php endif; ?>
     </section>
     <section class="contacts" id="contacts">
         <div class="contacts__content">
