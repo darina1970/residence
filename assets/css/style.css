@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Grandis Extended";
-  src: url("./assets/fonts/GrandisExtended-Light/GrandisExtended-Light.woff2")
+  src: url("fonts/GrandisExtended-Light/GrandisExtended-Light.woff2")
       format("woff2"),
-    url("./assets/fonts/GrandisExtended-Light/GrandisExtended-Light.woff") format("woff"),
-    url("./assets/fonts/GrandisExtended-Light/GrandisExtended-Light.ttf")
+    url("fonts/GrandisExtended-Light/GrandisExtended-Light.woff") format("woff"),
+    url("fonts/GrandisExtended-Light/GrandisExtended-Light.ttf")
       format("truetype"),
-    url("./assets/fonts/GrandisExtended-Light/GrandisExtended-Light.eot")
+    url("fonts/GrandisExtended-Light/GrandisExtended-Light.eot")
       format("embedded-opentype");
   font-weight: 500;
   font-style: normal;
@@ -15,12 +15,12 @@
 
 @font-face {
     font-family: 'StereoGothic900-Regular2';
-    src: url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.woff2")
+    src: url("fonts/StereoGothic900-Regular/StereoGothic900-Regular2.woff2")
       format("woff2"),
-    url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.woff") format("woff"),
-    url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.ttf")
+    url("fonts/StereoGothic900-Regular/StereoGothic900-Regular2.woff") format("woff"),
+    url("fonts/StereoGothic900-Regular/StereoGothic900-Regular2.ttf")
       format("truetype"),
-    url("./assets/fonts/StereoGothic900-Regular/StereoGothic900-Regular2.eot")
+    url("fonts/StereoGothic900-Regular/StereoGothic900-Regular2.eot")
       format("embedded-opentype");
   font-weight: 500;
   font-style: normal;

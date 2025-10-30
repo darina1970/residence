@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer__wrapper container">
         <div class="footer-left">
-            <img src="./assets/logo-small.svg" alt="logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-small.svg" alt="logo">
             <p>Жилой комплекс «Новые Академики» — это уникальные квартиры от застройщика «Главстрой» на юго-западе Москвы. Любая информация, представленная на сайте, носит информационный характер и не является публичной офертой.</p>
         </div>
         <div class="footer-right">

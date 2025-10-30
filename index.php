@@ -5,7 +5,7 @@ get_header();
 <main class="main">
     <section class="hero container">
         <div class="hero__wrapper">
-            <img src="./assets/logo.svg" alt="Logo big">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Logo big">
             <div class="hero__buttons">
                 <button class="hero__button-about btn btn-green open-modal">О проекте</button>
                 <button class="hero__button-request btn btn-transparent open-modal">Оставить заявку</button>
@@ -13,17 +13,17 @@ get_header();
         </div>          
     </section>
     <div class="decoration">
-        <img src="./assets/about.jpg" alt="">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/about.jpg" alt="">
     </div>
     <div class="pulse-btn open-modal" id="callButton">
         <div class="pulse-circle"></div>
         <div class="pulse-wave"></div>
-        <img class="pulse-icon" src="./assets/call.svg" alt="phone">
+        <img class="pulse-icon" src="<?php echo get_template_directory_uri(); ?>/assets/call.svg" alt="phone">
     </div>
     <section class="section-common fade-in" id="about">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="./assets/pin.png" alt="">
+                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
                 <h1>Новые Академики</h1>
                 <div class="block-content">
                     <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
@@ -34,13 +34,13 @@ get_header();
             </div>
         </div>
         <div class="decoration-inner">
-            <img src="./assets/location.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
         </div>
     </section>
     <section class="section-common fade-in" id="location">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="./assets/pin.png" alt="">
+                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
                 <h2>Расположение</h2>
                 <div class="block-content">
                     <p>Жилой комплекс «Новые Академики» расположен на улице Кржижановского, в историческом районе Академический на юго-западе Москвы. Этот район известен богатым академическим прошлым, ведь с середины XX века здесь селились сотрудники научных институтов, профессора и московская интеллигенция. Тихие, зеленые дворы и улицы создают атмосферу уюта и спокойствия, идеальную для жизни и воспитания детей.</p>
@@ -52,17 +52,17 @@ get_header();
         </div>
         <div class="decoration-double container">
             <div class="img__wrapper">
-                <img src="./assets/flats-1.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/flats-1.jpg" alt="">
             </div>
             <div class="img__wrapper">
-                <img src="./assets/flats-2.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/flats-2.jpg" alt="">
             </div>
         </div>
     </section>
     <section class="section-common fade-in">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="./assets/pin.png" alt="">
+                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
                 <h2>Квартиры</h2>
                 <div class="block-content">
                     <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
@@ -74,35 +74,35 @@ get_header();
         <div class="flats__wrapper container-fluid">
             <div class="flat__wrapper">
                 <div class="flat-img__wrapper">
-                    <img src="./assets/1.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
                 </div>
                 <h4 class="flat__title">1 спальня</h4>
                 <button class="btn btn-green open-modal">Узнать цены</button>
             </div>
             <div class="flat__wrapper">
                 <div class="flat-img__wrapper">
-                    <img src="./assets/1.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
                 </div>
                 <h4 class="flat__title">2 спальни</h4>
                 <button class="btn btn-green open-modal">Узнать цены</button>
             </div>
             <div class="flat__wrapper">
                 <div class="flat-img__wrapper">
-                    <img src="./assets/1.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
                 </div>
                 <h4 class="flat__title">3 спальни</h4>
                 <button class="btn btn-green open-modal">Узнать цены</button>
             </div>
             <div class="flat__wrapper">
                 <div class="flat-img__wrapper">
-                    <img src="./assets/1.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/1.png" alt="">
                 </div>
                 <h4 class="flat__title">4 спальни</h4>
                 <button class="btn btn-green open-modal">Узнать цены</button>
             </div>
         </div>
         <div class="decoration-inner">
-            <img src="./assets/location.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
         </div>
     </section>
     <section class="contacts">
@@ -120,7 +120,7 @@ get_header();
             </form>
         </div>
         <div class="contacts__image">
-            <img src="./assets/office.jpg" alt="office">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/office.jpg" alt="office">
         </div>
     </section>
     <div class="modal" id="offerModal">

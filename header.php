@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <a class="header-logo__wrapper" href="#">
-            <img src="./assets/logo-small.svg" alt="logo" class="header__logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/logo-small.svg" alt="logo" class="header__logo">
         </a>
         <nav class="nav">
             <ul class="header__menu">
