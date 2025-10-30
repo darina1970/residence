@@ -340,11 +340,7 @@ get_header();
         <div class="modal__content">
             <button class="modal__close">&times;</button>
             <h4 class="modal__title">Получить предложение</h4>
-            <form class="modal__form">
-                <input type="text" name="name" placeholder="Ваше имя*" required>
-                <input type="tel" name="phone" placeholder="Номер телефона*" required>
-                <button type="submit" class="btn btn-green">Отправить</button>
-            </form>
+            <?php echo do_shortcode('[contact-form-7 id="6b7a419" title="Модальное окно"]'); ?>
         </div>
     </div>
 </main>
