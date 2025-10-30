@@ -77,7 +77,7 @@ get_header();
                 <?php endif; ?>
 
                 <?php if ($title = get_field('section2_title')): ?>
-                    <h1><?php echo esc_html($title); ?></h1>
+                    <h2><?php echo esc_html($title); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($content = get_field('section2_content')): ?>
@@ -112,7 +112,7 @@ get_header();
                 <?php endif; ?>
 
                 <?php if ($title = get_field('section3_title')): ?>
-                    <h1><?php echo esc_html($title); ?></h1>
+                    <h2><?php echo esc_html($title); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($content = get_field('section3_content')): ?>
@@ -147,7 +147,7 @@ get_header();
                 <?php endif; ?>
 
                 <?php if ($title = get_field('section4_title')): ?>
-                    <h1><?php echo esc_html($title); ?></h1>
+                    <h2><?php echo esc_html($title); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($content = get_field('section4_content')): ?>
@@ -182,7 +182,7 @@ get_header();
                 <?php endif; ?>
 
                 <?php if ($title = get_field('section5_title')): ?>
-                    <h1><?php echo esc_html($title); ?></h1>
+                    <h2><?php echo esc_html($title); ?></h2>
                 <?php endif; ?>
 
                 <?php if ($content = get_field('section5_content')): ?>
@@ -313,22 +313,26 @@ get_header();
             </div>
         <?php endif; ?>
     </section>
-    <section class="contacts" id="contacts">
+    <section class="contacts">
         <div class="contacts__content">
             <h3 class="contacts__title">Офис продаж</h3>
             <div class="contacts__address">
-                <p class="contacts__city">г. Москва,</p>
-                <p class="contacts__street">ул. Кржижановского,</p>
-                <p class="contacts__building">д. 31</p>  
+                <p class="contacts__city"><?php the_field('city'); ?>,</p>
+                <p class="contacts__street"><?php the_field('street'); ?>,</p>
+                <p class="contacts__building"><?php the_field('building'); ?></p>  
             </div>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Имя*" required>
-                <input type="tel" name="phone" placeholder="Телефон*" required>
-                <button class="btn btn-green" type="submit">Отправить</button>
-            </form>
+
+            <?php echo do_shortcode('[contact-form-7 id="4983e37" title="Контактная форма 1"]'); ?>
+
         </div>
+
         <div class="contacts__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/office.jpg" alt="office">
+            <?php 
+            $office_image = get_field('office_image');
+            if ($office_image) {
+                echo wp_get_attachment_image($office_image, 'full', false, ['alt' => 'office']);
+            }
+            ?>
         </div>
     </section>
     <div class="modal" id="offerModal">
