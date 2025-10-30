@@ -261,6 +261,10 @@ button {
     align-items: center;
 }
 
+.hero__image {
+  max-height: 462px;
+}
+
 .block__wrapper {
     width: 75%;
     margin: auto auto;
@@ -272,6 +276,7 @@ button {
 
 .block__top-img {
   margin-bottom: 5%;
+  max-height: 100px;
 }
 
 .hero__buttons {

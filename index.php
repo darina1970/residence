@@ -5,7 +5,12 @@ get_header();
 <main class="main">
     <section class="hero container">
         <div class="hero__wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Logo big">
+            <?php
+            $hero_image = get_field('hero_image');
+            if ($hero_image):
+            ?>
+                <img class="hero__image" src="<?php echo esc_url($hero_image); ?>" alt="Hero Logo">
+            <?php endif; ?>
             <div class="hero__buttons">
                 <button class="hero__button-about btn btn-green open-modal">О проекте</button>
                 <button class="hero__button-request btn btn-transparent open-modal">Оставить заявку</button>
@@ -13,7 +18,12 @@ get_header();
         </div>          
     </section>
     <div class="decoration">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/about.jpg" alt="">
+        <?php
+            $hero_bottom_image = get_field('hero-bottom_image');
+            if ($hero_bottom_image):
+            ?>
+                <img src="<?php echo esc_url($hero_bottom_image); ?>" alt="photo">
+        <?php endif; ?>
     </div>
     <div class="pulse-btn open-modal" id="callButton">
         <div class="pulse-circle"></div>
@@ -23,19 +33,37 @@ get_header();
     <section class="section-common fade-in" id="about">
         <div class="container">
             <div class="block__wrapper">
-                <img class="block__top-img" src="<?php echo get_template_directory_uri(); ?>/assets/pin.png" alt="">
-                <h1>Новые Академики</h1>
-                <div class="block-content">
-                    <p>Жилой комплекс «Новые Академики» — это уникальный семейный проект на юго-западе Москвы, вдохновленный академическим прошлым района и архитектурой сталинских домов. Комплекс расположен на улице Кржижановского в Академическом районе, рядом с историческими домами, где жили профессора МГУ. Здесь сохраняется дух московской интеллигенции и атмосфера тишины и зелени, идеально подходящие для комфортного проживания с семьей.</p>
-                    <p>Архитектура комплекса от известного голландского бюро UNStudio сочетает современный стиль и элегантные элементы неоклассики, подчеркивая связь с историческим окружением. Высокие фасады из стекла и алюминия и уютный двор с зелеными зонами, спортивными площадками и беговыми дорожками создают идеальные условия для активного отдыха и спокойных прогулок.</p>
-                    <p>Для семейного комфорта в проекте предусмотрены просторные квартиры от двух до четырех спален, стильные лобби, детский сад, рестораны и магазины. Жилой комплекс «Новые Академики» предлагает все для комфортной и насыщенной жизни в Москве.</p>
-                </div>
+                <?php
+                $about_top_image = get_field('about_top_image');
+                if ($about_top_image):
+                    $top_img_url = is_array($about_top_image) ? $about_top_image['url'] : $about_top_image;
+                ?>
+                    <img class="block__top-img" src="<?php echo esc_url($top_img_url); ?>" alt="Декоративный элемент">
+                <?php endif; ?>
+
+                <?php if ($title = get_field('about_title')): ?>
+                    <h1><?php echo esc_html($title); ?></h1>
+                <?php endif; ?>
+
+                <?php if ($content = get_field('about_content')): ?>
+                    <div class="block-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
+
                 <button class="btn btn-green open-modal">Оставить заявку</button>
             </div>
         </div>
-        <div class="decoration-inner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/location.jpg" alt="">
-        </div>
+
+        <?php
+        $about_decoration_inner = get_field('about_decoration_inner');
+        if ($about_decoration_inner):
+            $dec_img_url = is_array($about_decoration_inner) ? $about_decoration_inner['url'] : $about_decoration_inner;
+        ?>
+            <div class="decoration-inner">
+                <img src="<?php echo esc_url($dec_img_url); ?>" alt="">
+            </div>
+        <?php endif; ?>
     </section>
     <section class="section-common fade-in" id="location">
         <div class="container">
