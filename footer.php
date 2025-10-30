@@ -4,7 +4,7 @@
             <?php
             $footer_logo = get_field('footer_logo');
             if ($footer_logo) {
-                echo '<img src="' . esc_url($footer_logo['url']) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="footer__logo">';
+                echo '<a href="#"><img src="' . esc_url($footer_logo['url']) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="footer__logo"></a>';
             }
             $footer_description = get_field('footer_description');
             if ($footer_description) {
