@@ -223,7 +223,7 @@ button {
   align-items: center;
 }
 
-.header-logo__wrapper img {
+.header__logo {
   display: block;
   flex-shrink: 0;
   height: auto;

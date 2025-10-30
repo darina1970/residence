@@ -16,3 +16,4 @@ add_action('after_setup_theme', function () {
         'header_menu' => 'Главное меню',
     ]);
 });
+
